@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/camera_tab_navigation.xml"
+    app:startDestination="@id/cameraFragment2">
+
+    <fragment
+        android:id="@+id/cameraFragment2"
+        android:name="com.example.chatapp.ui.home.CameraFragment"
+        android:label="CameraFragment" >
+        <action
+            android:id="@+id/action_cameraFragment2_to_cameraVideoResultFragment"
+            app:destination="@id/cameraVideoResultFragment" />
+        <action
+            android:id="@+id/action_cameraFragment2_to_cameraImageResultFragment"
+            app:destination="@id/cameraImageResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cameraImageResultFragment"
+        android:name="com.example.chatapp.ui.home.CameraImageResultFragment"
+        android:label="fragment_camera_image_result"
+        tools:layout="@layout/fragment_camera_image_result" >
+        <argument
+            android:name="uri"
+            app:argType="android.net.Uri"
+            />
+        <action
+            android:id="@+id/action_cameraImageResultFragment_to_cameraFragment2"
+            app:destination="@id/cameraFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/cameraVideoResultFragment"
+        android:name="com.example.chatapp.ui.home.CameraVideoResultFragment"
+        android:label="fragment_camera_video_result"
+        tools:layout="@layout/fragment_camera_video_result" >
+        <action
+            android:id="@+id/action_cameraVideoResultFragment_to_cameraFragment2"
+            app:destination="@id/cameraFragment2" />
+    </fragment>
+</navigation>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-2px"
+        android:minHeight="194dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:alpha="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="-2px"
+            android:layout_marginTop="56dp"
+            android:background="#fff"
+            android:visibility="invisible" />
+
+        <!--bubble-->
+        <TextView
+            android:id="@+id/fastscroll_bubble"
+            android:layout_width="140dp"
+            android:layout_height="33dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="52dp"
+            android:background="@drawable/trigger"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textSize="14sp"
+            android:visibility="gone"
+            tools:textColor="#000" />
+
+        <!--Scrollbar-->
+        <FrameLayout
+            android:id="@+id/fastscroll_scrollbar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:layout_marginTop="56dp"
+            android:minWidth="20dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/fastscroll_track"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:minWidth="45dp"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/fastscroll_handle"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:layout_gravity="end"
+                android:elevation="12dp"
+                android:minWidth="20dp"
+                android:paddingStart="5dp"
+                android:src="@drawable/handle" />
+        </FrameLayout>
+
+        <!--actual bottom sheet-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="82dp">
+
+            <!--ActionBar-->
+            <FrameLayout
+                android:id="@+id/topbar"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="#fff"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/selection_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:paddingStart="15dp"
+                    android:src="@drawable/ic_arrow_back_black_24dp" />
+
+                <TextView
+                    android:id="@+id/selection_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="#fff"
+                    android:textFontWeight="700"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/selection_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end"
+                    android:gravity="center_vertical"
+                    android:padding="20dp"
+                    android:text="@string/ok"
+                    android:textColor="#fff"
+                    android:textFontWeight="700"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/selection_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginEnd="20dp"
+                    android:gravity="center_vertical"
+                    android:src="@drawable/ic_check_box" />
+            </FrameLayout>
+
+            <!--bottom sheet Horizontal-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/arrow_up"
+                    android:layout_width="20dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:background="@drawable/ic_expand_less_black_24dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/instantRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="82dp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </FrameLayout>
+    </FrameLayout>
+
+
+</merge>

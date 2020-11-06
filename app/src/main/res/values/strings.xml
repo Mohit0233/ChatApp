@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">ChatApp</string>
+
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+
+    <string name="tab_text_1">CHATS</string>
+    <string name="tab_text_2">STATUS</string>
+    <string name="tab_text_3">CALLS</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="capture_button_alt">Capture</string>
+    <string name="switch_camera_button_alt">Switch camera</string>
+    <string name="gallery_button_alt">Gallery</string>
+    <string name="back_button_alt">Back</string>
+    <string name="share_button_alt">Share</string>
+    <string name="share_hint">Share using</string>
+    <string name="capture_mode_camera">Camera</string>
+    <string name="capture_mode_hdr">HDR</string>
+    <string name="capture_mode_night">Night</string>
+    <string name="delete_button_alt">Delete</string>
+    <string name="delete_dialog">Delete current photo?</string>
+    <string name="delete_title">Confirm</string>
+    <string name="negative_button">Not Now</string>
+    <string name="positive_button">Continue</string>
+
+
+    <string name="selection_limiter">Can\'t select more than %d items.</string>
+    <string name="bottom_message_without_video">Drag images up for gallery</string>
+    <string name="bottom_message_with_video">Hold for video, tap for photo</string>
+    <string name="ok">OK</string>
+    <string name="tap_to_select">Tap photo to select</string>
+    <string name="selected">Selected</string>
+    <string name="recent">Recent</string>
+    <string name="last_month">Last Month</string>
+    <string name="last_week">Last Week</string>
+    <string name="cannot_click_image">Can not add more than %s images</string>
+</resources>
