@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".ui.home.CameraImageResultFragment">
 
 
@@ -18,10 +19,11 @@
         tools:src="@tools:sample/backgrounds/scenic" />
 
     <FrameLayout
-        android:id="@+id/frameLayout"
+        android:id="@+id/bottomFrameLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@id/textView3"
+        android:background="#5E000000"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/capturedImage"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/capturedImage"
@@ -33,36 +35,58 @@
         android:id="@+id/textView3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="124dp"
-        android:layout_marginBottom="20dp"
-        android:maxLines="6"
+        android:layout_marginStart="12dp"
+        android:foregroundGravity="center_vertical"
+        android:gravity="center_vertical"
+        android:padding="12dp"
+        android:textColorHint="#3CFFFFFF"
+        android:textColor="@color/white"
+        android:background="@null"
+        android:focusedByDefault="false"
         android:hint="Add a caption"
+        android:maxLines="6"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/frameLayout"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
-        app:layout_constraintTop_toTopOf="@+id/imageButton" />
+        app:layout_constraintEnd_toStartOf="@+id/enterButton"
+        app:layout_constraintStart_toEndOf="@+id/addImageButton" />
 
     <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
+        android:id="@+id/addImageButton"
+        android:layout_width="28dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
         android:backgroundTint="@android:color/transparent"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
         android:src="@drawable/ic_baseline_image_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/frameLayout" />
+        app:layout_constraintBottom_toBottomOf="@id/bottomFrameLayout"
+        app:layout_constraintStart_toStartOf="@+id/bottomFrameLayout"
+        app:layout_constraintTop_toTopOf="@+id/bottomFrameLayout" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/enterButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="621dp"
-        android:src="@drawable/check_button"
         android:backgroundTint="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
-        app:layout_constraintEnd_toEndOf="@id/frameLayout"
-        app:layout_constraintTop_toTopOf="@+id/frameLayout" />
+        android:src="@drawable/check_button"
+        app:layout_constraintBottom_toTopOf="@+id/bottomFrameLayout"
+        app:layout_constraintEnd_toEndOf="@id/bottomFrameLayout"
+        app:layout_constraintTop_toTopOf="@+id/bottomFrameLayout" />
+
+    <ImageButton
+        android:id="@+id/emojiButton"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="12dp"
+        android:background="@android:color/transparent"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_baseline_emoji_emotions_24"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/bottomFrameLayout"
+        app:layout_constraintStart_toStartOf="@id/bottomFrameLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

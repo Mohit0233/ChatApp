@@ -2,8 +2,12 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:drawable="@drawable/circular_button"
+        android:width="64dp"
+        android:height="64dp"
         />
     <item
+        android:width="32dp"
+        android:height="32dp"
         android:drawable="@drawable/ic_check_black_24dp"
         android:gravity="center" />
 </layer-list>

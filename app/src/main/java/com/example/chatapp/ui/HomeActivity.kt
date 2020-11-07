@@ -10,6 +10,7 @@ import android.util.DisplayMetrics
 import android.util.Log
 import android.view.KeyEvent
 import android.view.View
+import android.view.WindowInsets
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
@@ -20,10 +21,7 @@ import com.example.chatapp.R
 import com.example.chatapp.ui.home.PermissionsDialogFragment
 import com.example.chatapp.ui.home.PermissionsFragment
 import com.example.chatapp.ui.home.SectionsPagerAdapter
-import com.example.chatapp.utils.hideAppBar
-import com.example.chatapp.utils.setDrawable
-import com.example.chatapp.utils.setTabWidthAsWrapContent
-import com.example.chatapp.utils.translationAnimation
+import com.example.chatapp.utils.*
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -143,9 +141,10 @@ class HomeActivity : AppCompatActivity(), PermissionsDialogFragment.PermissionsD
         viewPager.postDelayed({
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
                 window.setDecorFitsSystemWindows(false)
+                window.insetsController?.hide(WindowInsets.Type.systemBars())
             }
             if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.R) {
-                viewPager.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+                window.decorView.systemUiVisibility = FLAGS_FULLSCREEN
             }
         }, IMMERSIVE_FLAG_TIMEOUT)
     }
@@ -154,7 +153,7 @@ class HomeActivity : AppCompatActivity(), PermissionsDialogFragment.PermissionsD
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
             window.setDecorFitsSystemWindows(true)
         } else if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.R) {
-            viewPager.systemUiVisibility = View.VISIBLE
+            window.decorView.systemUiVisibility = View.VISIBLE
         }
     }
 
