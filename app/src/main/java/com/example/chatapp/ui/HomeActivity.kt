@@ -18,9 +18,9 @@ import androidx.fragment.app.DialogFragment
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.chatapp.R
-import com.example.chatapp.ui.home.PermissionsDialogFragment
-import com.example.chatapp.ui.home.PermissionsFragment
-import com.example.chatapp.ui.home.SectionsPagerAdapter
+import com.example.chatapp.ui.home.fragment.PermissionsDialogFragment
+import com.example.chatapp.ui.home.fragment.PermissionsFragment
+import com.example.chatapp.ui.home.adapter.SectionsPagerAdapter
 import com.example.chatapp.utils.*
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.floatingactionbutton.FloatingActionButton

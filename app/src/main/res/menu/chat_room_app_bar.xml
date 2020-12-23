@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/groupCallItem"
+        android:icon="@drawable/ic_baseline_videocam_24"
+        android:title="Video Call"
+        android:contentDescription="Video Call"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/voiceCallItem"
+        android:icon="@drawable/ic_baseline_add_ic_call_24"
+        android:title="Voice Call"
+        android:contentDescription="Voice Call"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/groupInfoItem"
+        android:title="Group Info"
+        android:contentDescription="Group Info"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/groupMediaItem"
+        android:title="Group Media"
+        android:contentDescription="Group Media"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/searchItem"
+        android:title="Search"
+        android:contentDescription="Search"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/muteNotificationItem"
+        android:title="Mute Notification"
+        android:contentDescription="Mute Notification"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/wallpaperItem"
+        android:title="Wallpaper"
+        android:contentDescription="Wallpaper"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/moreItem"
+        android:title="More"
+        android:contentDescription="More"
+        app:showAsAction="never">
+
+        <menu>
+
+            <item
+                android:id="@+id/reportItem"
+                android:title="Report"
+                android:contentDescription="Report"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/exitGroupItem"
+                android:title="Exit Group"
+                android:contentDescription="Exit Group"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/addShortcutItem"
+                android:title="Clear Chat"
+                android:contentDescription="Clear Chat"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/clearChatItem"
+                android:title="ExportChat"
+                android:contentDescription="Export Chat"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/exportChatItem"
+                android:title="Add Shortcut"
+                android:contentDescription="Add Shortcut"
+                app:showAsAction="never" />
+
+        </menu>
+
+    </item>
+
+
+</menu>

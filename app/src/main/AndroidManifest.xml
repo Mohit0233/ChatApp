@@ -2,10 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.chatapp">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-feature android:name="android.hardware.camera.any" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-feature android:name="android.hardware.camera.any" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -15,22 +16,32 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ChatApp">
         <activity
+            android:name=".ui.chatinfo.ChatInfoActivity"
+            android:label="@string/title_activity_chat_info"
+            android:parentActivityName=".ui.chatroom.ChatRoomActivity"
+            android:theme="@style/Theme.ChatApp.NoActionBar" />
+        <activity
+            android:name=".ui.chatroom.ChatRoomActivity"
+            android:theme="@style/ChatActivityTheme"
+            android:parentActivityName=".ui.HomeActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
             android:name=".ui.HomeActivity"
             android:label="@string/title_activity_home"
-            android:theme="@style/Theme.ChatApp.NoActionBar">
+            android:theme="@style/Theme.ChatApp.NoActionBar"
+            android:windowSoftInputMode="adjustPan">
 
             <!-- Declare notch support -->
-            <meta-data android:name="android.notch_support" android:value="true"/>
-
+            <meta-data
+                android:name="android.notch_support"
+                android:value="true" />
         </activity>
         <activity
             android:name=".ui.login.AuthActivity"
             android:label="@string/title_activity_login" />
-
-        <activity android:name=".ui.MainActivity"
-            android:label="@string/title_activity_main"
-            android:theme="@style/LaunchTheme"
-            >
+        <activity
+            android:name=".ui.MainActivity"
+            android:theme="@style/LaunchTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

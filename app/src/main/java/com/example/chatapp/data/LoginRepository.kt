@@ -12,6 +12,7 @@ class LoginRepository(
 
     fun getUser() =
         dataSource.currentUser()
+
     val isLoggedIn: Boolean
         get() = dataSource.currentUser() != null
 

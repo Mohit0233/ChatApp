@@ -29,8 +29,13 @@
 
         <item name="android:windowAnimationStyle">@null</item>
         <item name="android:windowActivityTransitions">false</item>
-        <item name="android:windowBackground">@drawable/launch_dark_xml</item>
+        <item name="android:windowBackground">@drawable/launch_dark</item>
 
+    </style>
+
+
+    <style name="ChatActivityTheme" parent="Theme.ChatApp.NoActionBar">
+        <item name="android:windowBackground">@drawable/chat_window_background</item>
     </style>
 
 </resources>

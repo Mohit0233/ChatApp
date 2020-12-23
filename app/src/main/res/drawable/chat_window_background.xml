@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <color android:color="#071820"/>
+    </item>
+
+<!--
+    <item android:drawable="@drawable/bg_chat_tile"
+        />
+-->
+
+    <item>
+        <bitmap
+            android:src="@drawable/bg_chat_tile"
+            android:alpha="0.3"
+            android:tint="#676767"
+            />
+    </item>
+
+</layer-list>

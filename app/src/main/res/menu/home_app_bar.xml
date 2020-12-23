@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/searchHomeItem"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="Search"
+        android:contentDescription="Search"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/newGroupHomeItem"
+        android:title="New Group"
+        android:contentDescription="New Group"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/newBroadcastItem"
+        android:title="New broadcast"
+        android:contentDescription="New broadcast"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/starredMessageHomeItem"
+        android:title="Starred message"
+        android:contentDescription="Starred message"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/settingsHomeItem"
+        android:title="Settings"
+        android:contentDescription="Settings"
+        app:showAsAction="never" />
+
+
+
+
+</menu>

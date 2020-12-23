@@ -6,9 +6,9 @@ import io.reactivex.Completable
 
 class FirebaseSource {
 
-    private val firebaseAuth: FirebaseAuth by lazy {
+    private val firebaseAuth: FirebaseAuth =
         FirebaseAuth.getInstance()
-    }
+
 
     private var user = firebaseAuth.currentUser
 
@@ -16,7 +16,7 @@ class FirebaseSource {
         firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
             if (!emitter.isDisposed) {
                 if (it.isSuccessful) {
-                    Log.e("user","${it.result?.user?.email}")
+                    Log.e("user", "${it.result?.user?.email}")
                     user = it.result?.user
                     emitter.onComplete()
                 } else

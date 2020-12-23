@@ -26,7 +26,25 @@
     <style name="LaunchTheme" parent="Theme.ChatApp.NoActionBar">
         <item name="android:windowAnimationStyle">@null</item>
         <item name="android:windowActivityTransitions">@null</item>
-        <item name="android:windowBackground">@drawable/launch_light_xml</item>
+        <item name="android:windowBackground">@drawable/launch_light</item>
     </style>
 
+    <style name="ChatActivityTheme" parent="Theme.ChatApp.NoActionBar">
+        <item name="android:windowBackground">@drawable/chat_window_background</item>
+    </style>
+
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">?android:attr/listDivider</item>
+    </style>
+
+    <style name="roundedImageViewRounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="Theme.ChatApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.ChatApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

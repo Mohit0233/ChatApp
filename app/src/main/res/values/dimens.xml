@@ -53,5 +53,7 @@
     <dimen name="fastscroll_bubble_radius">16dp</dimen>
     <dimen name="fastscroll_scrollbar_padding_end">12dp</dimen>
     <dimen name="fastscroll_bubble_size">38dp</dimen>
+    <dimen name="app_bar_height">240dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
 
 </resources>

@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import com.example.chatapp.data.LoginRepository
 
 class MainViewModel(
-  private val loginRepository: LoginRepository
+  loginRepository: LoginRepository
 ) : ViewModel() {
   var user = loginRepository.getUser()
 }

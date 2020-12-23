@@ -13,6 +13,7 @@ import com.google.firebase.auth.FirebaseUser
 
 fun Context.startHomeActivity() =
     Intent(this, HomeActivity::class.java).also {
+        //Todo remove the animation flag it cause the second activity to start with a white screen which is not good
         it.flags =
             Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NO_ANIMATION
         startActivity(it)
@@ -20,6 +21,7 @@ fun Context.startHomeActivity() =
 
 fun Context.startLoginActivity() =
     Intent(this, AuthActivity::class.java).also {
+        //Todo remove the animation flag it cause the second activity to start with a white screen which is not good
         it.flags =
             Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NO_ANIMATION
         startActivity(it)

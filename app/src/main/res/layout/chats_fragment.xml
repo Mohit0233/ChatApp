@@ -4,12 +4,14 @@
     android:paddingTop="120dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChatsFragment">
+    tools:context=".ui.home.fragment.ChatsFragment">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello Ji" />
+    <include layout="@layout/layout_chat_view"/>
 
+    <Button
+        android:layout_gravity="bottom"
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button" />
 </FrameLayout>

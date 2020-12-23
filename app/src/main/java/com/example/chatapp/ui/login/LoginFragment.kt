@@ -68,7 +68,7 @@ class LoginFragment : Fragment() {
                 Log.e("Login Must be successful","yeah")
             }
 
-            authViewModel.logout()
+            //authViewModel.logout()
 
         })
 

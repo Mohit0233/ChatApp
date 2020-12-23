@@ -3,22 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/camera_tab_navigation.xml"
-    app:startDestination="@id/cameraFragment2">
+    app:startDestination="@id/cameraFragment">
 
     <fragment
-        android:id="@+id/cameraFragment2"
-        android:name="com.example.chatapp.ui.home.CameraFragment"
+        android:id="@+id/cameraFragment"
+        android:name="com.example.chatapp.ui.home.fragment.CameraFragment"
         android:label="CameraFragment" >
         <action
-            android:id="@+id/action_cameraFragment2_to_cameraVideoResultFragment"
+            android:id="@+id/action_CameraFragment_to_cameraVideoResultFragment"
             app:destination="@id/cameraVideoResultFragment" />
         <action
-            android:id="@+id/action_cameraFragment2_to_cameraImageResultFragment"
+            android:id="@+id/action_CameraFragment_to_cameraImageResultFragment"
             app:destination="@id/cameraImageResultFragment" />
     </fragment>
     <fragment
         android:id="@+id/cameraImageResultFragment"
-        android:name="com.example.chatapp.ui.home.CameraImageResultFragment"
+        android:name="com.example.chatapp.ui.home.fragment.CameraImageResultFragment"
         android:label="fragment_camera_image_result"
         tools:layout="@layout/fragment_camera_image_result" >
         <argument
@@ -26,16 +26,16 @@
             app:argType="android.net.Uri"
             />
         <action
-            android:id="@+id/action_cameraImageResultFragment_to_cameraFragment2"
-            app:destination="@id/cameraFragment2" />
+            android:id="@+id/action_cameraImageResultFragment_to_CameraFragment"
+            app:destination="@id/cameraFragment" />
     </fragment>
     <fragment
         android:id="@+id/cameraVideoResultFragment"
-        android:name="com.example.chatapp.ui.home.CameraVideoResultFragment"
+        android:name="com.example.chatapp.ui.home.fragment.CameraVideoResultFragment"
         android:label="fragment_camera_video_result"
         tools:layout="@layout/fragment_camera_video_result" >
         <action
-            android:id="@+id/action_cameraVideoResultFragment_to_cameraFragment2"
-            app:destination="@id/cameraFragment2" />
+            android:id="@+id/action_cameraVideoResultFragment_to_CameraFragment"
+            app:destination="@id/cameraFragment" />
     </fragment>
 </navigation>
