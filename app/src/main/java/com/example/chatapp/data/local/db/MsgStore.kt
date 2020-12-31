@@ -4,12 +4,16 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.chatapp.data.local.dao.MessageDao
+import com.example.chatapp.data.local.model.ChatList
 
 
 @Database(entities = [], version = 1)
 abstract class MsgStore : RoomDatabase() {
 
-    //abstract fun messagesDao(): MessageDao
+    abstract fun messageDao(): MessageDao
+    abstract fun chatList(): ChatList
+
 
     companion object {
         @Volatile
