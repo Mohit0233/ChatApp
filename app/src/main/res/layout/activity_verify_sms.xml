@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.login.VerifySmsActivity">
+
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/title_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_surface"
+        android:elevation="4dp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/registrationTitleTextColor"
+        android:textSize="18sp">
+
+        <TextView
+            android:id="@+id/title_toolbar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/register_phone_header"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="start|center_horizontal|clip_horizontal"
+            android:textColor="@color/reg_title_color"
+            android:textSize="18sp" />
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/description_2_top"
+                style="@style/Text.Description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:lineSpacingMultiplier="1.25"
+                android:text="@string/verify_sms_description"
+                android:textColorLink="@color/text_link_color"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/wrongNumberTextView"
+                style="@style/Text.Description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:lineSpacingMultiplier="1.25"
+                android:text="@string/verify_sms_description"
+                android:textColor="@color/text_link_color"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/roaming_warning"
+                style="@style/Text.Description"
+                android:layout_width="match_parent"
+                android:layout_marginTop="8dp"
+                android:gravity="center_horizontal"
+                android:lineSpacingMultiplier="1.25"
+                android:text="@string/verify_sms_roaming_warning"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/sms_pane_call_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingTop="14dp">
+
+                <RelativeLayout
+                    android:id="@+id/code_input"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:paddingBottom="2dp">
+
+                    <EditText
+                        android:id="@+id/verify_sms_code_input"
+                        android:layout_width="160sp"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:digits="0123456789"
+                        android:gravity="bottom|center_vertical|center_horizontal|center"
+                        android:inputType="phone"
+                        android:singleLine="true"
+                        android:maxLength="6"
+                        android:hint="------"
+                        android:textSize="22sp"
+                        android:importantForAutofill="no" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_code_input_blocked"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_below="@+id/verify_sms_code_input"
+                        android:layout_alignStart="@+id/verify_sms_code_input"
+                        android:layout_alignEnd="@+id/verify_sms_code_input"
+                        android:layout_gravity="bottom"
+                        android:layout_marginTop="2dp"
+                        android:progressDrawable="@drawable/blocked_code_input_progress" />
+                </RelativeLayout>
+
+                <ImageButton
+                    android:id="@+id/verify_sms_retry_btn"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_toEndOf="@+id/code_input"
+                    android:background="@drawable/input_circle_green"
+                    android:contentDescription="@string/retry"
+                    android:src="@drawable/ic_action_arrow_next"
+                    android:visibility="visible" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/description_2_bottom"
+                style="@style/Text.Description"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:paddingLeft="16dp"
+                android:paddingTop="0dp"
+                android:paddingRight="16dp"
+                android:text="@string/verify_description_bottom"
+                android:textColor="@color/body_light_gray"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:id="@+id/sms_progress_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="4dp">
+
+                <Button
+                    android:id="@+id/resend_sms_btn"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="16dp"
+                    android:gravity="start|center_vertical|center_horizontal|center|start"
+                    android:text="@string/verify_resend_sms_button"
+                    android:textAllCaps="false"
+                    android:textColor="@color/selector_verify_sms_button_text" />
+
+                <TextView
+                    android:id="@+id/countdown_time_sms"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="0:59"
+                    android:textColor="@color/verify_sms_disabled_color"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/verify_sms_divider" />
+
+            <LinearLayout
+                android:id="@+id/voice_progress_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="invisible">
+
+                <Button
+                    android:id="@+id/call_btn"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="16dp"
+                    android:gravity="start|center_vertical|center_horizontal|center|start"
+                    android:text="@string/verify_voice_call_button"
+                    android:textAllCaps="false"
+                    android:textColor="@color/selector_verify_sms_button_text" />
+
+                <TextView
+                    android:id="@+id/countdown_time_voice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="0:59"
+                    android:textColor="@color/verify_sms_disabled_color"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

@@ -7,6 +7,7 @@
     <uses-feature android:name="android.hardware.camera.any" />
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:allowBackup="true"
@@ -15,6 +16,36 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ChatApp">
+        <activity android:name=".ui.home.ContactPickerActivity"
+            android:parentActivityName=".ui.home.HomeActivity"
+            />
+        <activity
+            android:name=".ui.login.RegisterNameActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.ChatApp.NoActionBar"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.login.VerifySmsActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.ChatApp.NoActionBar">
+            <intent-filter android:label="@string/register_phone_header">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.login.CountryPickerActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@style/Theme.ChatApp.NoActionBar" />
+        <activity
+            android:name=".ui.login.RegisterPhoneActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.ChatApp.NoActionBar"
+            android:windowSoftInputMode="adjustUnspecified|stateUnchanged|stateVisible|stateAlwaysVisible|adjustResize" />
         <activity
             android:name=".ui.chatinfo.ChatInfoActivity"
             android:label="@string/title_activity_chat_info"
@@ -22,11 +53,11 @@
             android:theme="@style/Theme.ChatApp.NoActionBar" />
         <activity
             android:name=".ui.chatroom.ChatRoomActivity"
+            android:parentActivityName=".ui.home.HomeActivity"
             android:theme="@style/ChatActivityTheme"
-            android:parentActivityName=".ui.HomeActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".ui.HomeActivity"
+            android:name=".ui.home.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.ChatApp.NoActionBar"
             android:windowSoftInputMode="adjustPan">

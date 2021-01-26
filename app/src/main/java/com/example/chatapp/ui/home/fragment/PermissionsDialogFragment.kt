@@ -7,13 +7,14 @@ import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import android.view.KeyEvent
+import android.view.View
 import androidx.fragment.app.DialogFragment
 import com.example.chatapp.R
 
 class PermissionsDialogFragment : DialogFragment() {
 
-    internal lateinit var listener: PermissionsDialogListener
-    internal lateinit var lis: PermissionsDialogBackListener
+    private lateinit var listener: PermissionsDialogListener
+    private lateinit var lis: PermissionsDialogBackListener
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
@@ -34,18 +35,19 @@ class PermissionsDialogFragment : DialogFragment() {
 
             // Inflate and set the layout for the dialog
             // Pass null as the parent view because its going in the dialog layout
+            // todo View.inflate(activity, R.layout.permissions_dialog, null))
             builder.setView(inflater.inflate(R.layout.permissions_dialog, null))
                 // Add action buttons
-                .setPositiveButton(R.string.positive_button,
-                    DialogInterface.OnClickListener { _, _ ->
-                        // Send the positive button event back to the host activity
-                        listener.onDialogPositiveClick(this)
-                    })
-                .setNegativeButton(R.string.negative_button,
-                    DialogInterface.OnClickListener { _, _ ->
-                        // Send the negative button event back to the host activity
-                        listener.onDialogNegativeClick(this)
-                    })
+                .setPositiveButton(R.string.positive_button
+                ) { _, _ ->
+                    // Send the positive button event back to the host activity
+                    listener.onDialogPositiveClick(this)
+                }
+                .setNegativeButton(R.string.negative_button
+                ) { _, _ ->
+                    // Send the negative button event back to the host activity
+                    listener.onDialogNegativeClick(this)
+                }
             isCancelable = false
             builder.create()
         } ?: throw IllegalStateException("Activity cannot be null")

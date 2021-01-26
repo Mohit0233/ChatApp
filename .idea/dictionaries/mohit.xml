@@ -2,8 +2,12 @@
   <dictionary name="mohit">
     <words>
       <w>chatroom</w>
+      <w>docid</w>
       <w>emoji</w>
+      <w>firestore</w>
       <w>luma</w>
+      <w>rowid</w>
+      <w>whatsapp</w>
     </words>
   </dictionary>
 </component>

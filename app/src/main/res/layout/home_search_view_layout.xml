@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/abc_action_bar_default_height_material">
+
+    <ImageView
+        android:id="@+id/search_back"
+        style="?attr/actionButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|center_vertical|center_horizontal|center"
+        android:contentDescription="@string/back"
+        android:src="@drawable/ic_back_teal"
+        app:tint="@color/searchBackTint" />
+
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_view"
+        style="@style/Widget.AppCompat.SearchView.ActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical" />
+
+    <ImageView
+        android:id="@+id/search_filter"
+        style="?attr/actionButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|center_vertical|center_horizontal|center"
+        android:visibility="gone"
+        app:tint="@color/chats_filter" />
+</merge>
+

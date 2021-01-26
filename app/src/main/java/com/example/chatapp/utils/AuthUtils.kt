@@ -7,8 +7,9 @@ import android.text.TextWatcher
 import android.widget.EditText
 import android.widget.Toast
 import com.example.chatapp.R
-import com.example.chatapp.ui.HomeActivity
-import com.example.chatapp.ui.login.AuthActivity
+import com.example.chatapp.ui.home.HomeActivity
+import com.example.chatapp.ui.login.RegisterNameActivity
+import com.example.chatapp.ui.login.RegisterPhoneActivity
 import com.google.firebase.auth.FirebaseUser
 
 fun Context.startHomeActivity() =
@@ -19,13 +20,21 @@ fun Context.startHomeActivity() =
         startActivity(it)
     }
 
-fun Context.startLoginActivity() =
-    Intent(this, AuthActivity::class.java).also {
+fun Context.startRegisterNameActivity() =
+    Intent(this, RegisterNameActivity::class.java).also {
         //Todo remove the animation flag it cause the second activity to start with a white screen which is not good
         it.flags =
             Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NO_ANIMATION
         startActivity(it)
     }
+fun Context.startRegisterPhoneActivity() =
+    Intent(this, RegisterPhoneActivity::class.java).also {
+        //Todo remove the animation flag it cause the second activity to start with a white screen which is not good
+        it.flags =
+            Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NO_ANIMATION
+        startActivity(it)
+    }
+
 
 fun Context.updateUiWithUser(model: FirebaseUser) {
     val welcome = getString(R.string.welcome)

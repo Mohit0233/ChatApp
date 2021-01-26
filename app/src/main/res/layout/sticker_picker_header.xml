@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/sticker_picker_header_height"
+    android:background="@color/emoji_popup_body"
+    android:orientation="horizontal"
+    android:visibility="gone">
+
+    <FrameLayout
+        android:id="@+id/sticker_header_recycler_container"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="8">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/sticker_header_recycler"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:clipToPadding="false" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/sticker_store_button"
+            style="@style/ActionBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/sticker_store_content_description"
+            android:src="@drawable/open_sticker_store"
+            android:visibility="gone"
+            app:tint="@color/stickerStoreIconTint" />
+
+        <View
+            android:id="@+id/sticker_store_badge"
+            style="@style/StickerUpdateBadge"
+            android:layout_gravity="top|start|center_vertical|center_horizontal|center"
+            android:visibility="gone" />
+    </FrameLayout>
+</LinearLayout>

@@ -18,6 +18,7 @@ import android.util.DisplayMetrics
 import android.util.Log
 import android.view.*
 import android.webkit.MimeTypeMap
+import android.widget.FrameLayout
 import android.widget.ImageButton
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
@@ -29,14 +30,12 @@ import androidx.lifecycle.lifecycleScope
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.navigation.Navigation
 import com.example.chatapp.R
-import com.example.chatapp.ui.HomeActivity
-import com.example.chatapp.ui.KEY_EVENT_ACTION
-import com.example.chatapp.ui.KEY_EVENT_EXTRA
+import com.example.chatapp.ui.home.HomeActivity
+import com.example.chatapp.ui.home.KEY_EVENT_ACTION
+import com.example.chatapp.ui.home.KEY_EVENT_EXTRA
 import com.example.chatapp.ui.home.*
 import com.example.chatapp.utils.*
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import kotlinx.android.synthetic.main.camera_bottom_sheet.*
-import kotlinx.android.synthetic.main.camera_fragment.view.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.io.File
@@ -247,7 +246,7 @@ class CameraFragment : Fragment() {
                     MotionEvent.ACTION_DOWN -> {
 
                         val factory: MeteringPointFactory =
-                            view.viewFinder.meteringPointFactory
+                            view.findViewById<PreviewView>(R.id.viewFinder).meteringPointFactory
                         val point = factory.createPoint(event.x, event.y)
                         Log.e("event.x && event.y", "${event.x} ${event.y}")
                         val action = FocusMeteringAction.Builder(point).apply {
@@ -274,8 +273,8 @@ class CameraFragment : Fragment() {
             true
         }
 
-        if (bottom_sheet != null) {
-            val bottomSheetBehavior = BottomSheetBehavior.from(bottom_sheet)
+        if (view.findViewById<FrameLayout>(R.id.bottom_sheet) != null) {
+            val bottomSheetBehavior = BottomSheetBehavior.from(view.findViewById<FrameLayout>(R.id.bottom_sheet))
             bottomSheetBehavior.peekHeight =
                 194 * relativeDensity //convertDpToPixel(194, requireContext()).toInt()
             bottomSheetBehavior.addBottomSheetCallback(object :

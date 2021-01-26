@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.login.RegisterNameActivity">
+
+
+    <TextView
+        android:id="@+id/titleRegisterName"
+        style="@style/RegistrationTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/register_name_profile"
+        android:background="@color/primary_surface"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp" />
+
+    <View
+        android:id="@+id/title_bottom_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_below="@+id/titleRegisterName"
+        android:background="@drawable/bottom_elevation"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:id="@+id/reg_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/accept_button_and_shortcut_layout"
+        android:layout_below="@+id/titleRegisterName">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/biz_info_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="16dp"
+                android:paddingTop="16dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="24dp"
+                android:text="@string/register_name_info"
+                android:textColor="@color/body_light_gray"
+                android:textSize="14sp" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <ImageButton
+                    android:id="@+id/change_photo_btn"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@null"
+                    android:contentDescription="@string/profile_photo"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_reg_addphoto"
+                    android:tint="@null" />
+
+                <ProgressBar
+                    android:id="@+id/change_photo_progress"
+                    style="?android:attr/progressBarStyleInverse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingTop="24dp"
+                android:paddingRight="16dp">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/registration_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLength="25"
+                        android:hint="@string/register_name_hint"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapWords"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:paddingEnd="32dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/secondary_text"
+                        android:textSize="16sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/name_counter_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/registration_name"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="10dp"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="12sp"
+                        android:visibility="invisible" />
+                </RelativeLayout>
+
+                <ImageButton
+                    android:id="@+id/emoji_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_gravity="end|center_vertical|center_horizontal|center"
+                    android:background="@null"
+                    android:contentDescription="@string/emoji_button_description"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:src="@drawable/ib_emoji"
+                    app:tint="@color/ibEmojiIconTint" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:id="@+id/accept_button_top_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_above="@+id/accept_button_and_shortcut_layout"
+        android:background="@drawable/top_elevation"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/accept_button_and_shortcut_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/primary_surface"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/register_name_accept"
+            style="@style/Button"
+            android:layout_gravity="bottom|center_vertical|center_horizontal|center"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:text="@string/next" />
+
+        <RelativeLayout
+            android:id="@+id/shortcut_layout"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/shortcut_layout_background"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/Text.Description"
+                android:layout_width="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/cbx_app_shortcut"
+                android:gravity="start|center_vertical|center_horizontal|center"
+                android:paddingEnd="14dp"
+                android:text="@string/install_app_shortcut"
+                android:textColor="@color/primary_text"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/cbx_app_shortcut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:gravity="center" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/emoji_search_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

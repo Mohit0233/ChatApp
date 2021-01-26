@@ -9,43 +9,45 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/message_send"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
+        android:layout_marginBottom="4dp"
         android:background="@drawable/bg_msg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="UselessParent">
 
         <TextView
-            android:id="@+id/text"
+            android:id="@+id/msgData"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="6dp"
-            android:layout_marginBottom="6dp"
-            android:maxWidth="200dp"
-            android:text="A lot of content a lot of content a lot of content a lot of c           onte                             nt and some more"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="8dp"
+            android:maxWidth="405dp"
+            android:minWidth="100dp"
+            android:text="A lot of content a lot of content a lot of content a lot of c onte                             nt and some more al;kfja;dlskfjs;lfkjs;dflkas123456"
             android:textColor="#FFFFFF"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/msgTime"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/msg_time"
+            android:id="@+id/msgTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
             android:layout_marginEnd="4dp"
             android:layout_marginBottom="4dp"
-            android:layout_toEndOf="@+id/text"
+            android:layout_toEndOf="@+id/msgData"
             android:text="1:30 P.M."
             android:textColor="#8F8F8F"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/text" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

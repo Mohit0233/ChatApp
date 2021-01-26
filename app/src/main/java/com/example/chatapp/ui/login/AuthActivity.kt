@@ -16,3 +16,5 @@ class AuthActivity : AppCompatActivity() {
 
 
 }
+//<string name="register_phone_header_experiment">Enter your phone number</string>
+//<string name="register_phone_number_code_confirm_experiment">WhatsApp will send an SMS message to verify your phone number. &lt;a href=\"whats-my-number\"&gt;What\'s my number?&lt;/a&gt;</string>

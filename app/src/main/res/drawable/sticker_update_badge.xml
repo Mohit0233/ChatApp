@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:shape="oval">
+    <solid android:color="@color/sticker_update_badge_color"/>
+    <stroke android:width="2dp" android:color="@color/sticker_update_badge_outline_color"/>
+    <size android:height="5dp" android:width="5dp"/>
+</shape>

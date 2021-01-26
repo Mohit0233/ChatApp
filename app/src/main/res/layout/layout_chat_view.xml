@@ -2,36 +2,86 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="?attr/selectableItemBackground"
-    android:clickable="true"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    >
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true">
+    <!--
 
-    <View
-        style="@style/Divider"
-        android:layout_width="0dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView7"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toTopOf="parent" />
+        <View
+            style="@style/Divider"
+            android:layout_width="0dp"
+            app:layout_constraintEnd_toEndOf="@+id/textView7"
+            app:layout_constraintStart_toStartOf="@+id/textView5"
+            app:layout_constraintTop_toTopOf="parent" />
+    -->
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/displayPictureChatView"
         android:layout_width="52dp"
         android:layout_height="52dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:background="@null"
-        app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
         android:src="@drawable/p_p"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
+
+    <ImageView
+        android:id="@+id/conversations_row_ephemeral_status"
+        android:layout_width="@dimen/selection_check_image_size"
+        android:layout_height="@dimen/selection_check_image_size"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/selection_check_margin_left"
+        android:layout_marginTop="@dimen/selection_check_margin_top"
+        android:background="@drawable/primary_color_circle"
+        android:src="@drawable/ic_chatlist_ephemeral"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/msgStatusTint" />
+
+    <CheckBox
+        android:id="@+id/selection_check"
+        android:layout_width="@dimen/selection_check_image_size"
+        android:layout_height="@dimen/selection_check_image_size"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/selection_check_margin_left"
+        android:layout_marginTop="@dimen/selection_check_margin_top"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/payments_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|center_vertical|center_horizontal|center"
+        android:gravity="start"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/meidaIndicator"
+        app:layout_constraintEnd_toEndOf="@+id/meidaIndicator" />
+
+    <ImageView
+        android:id="@+id/live_location_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="4dp"
+        android:contentDescription="@string/conversation_sharing_live_location"
+        android:scaleType="fitStart"
+        android:src="@drawable/ic_inline_live_location_tealgreen"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/pinImageViewChatView"
+        app:layout_constraintEnd_toStartOf="@+id/pinImageViewChatView"
+        app:layout_constraintTop_toTopOf="@+id/pinImageViewChatView" />
+
+
+    <TextView
+        android:id="@+id/titleChatView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -40,87 +90,104 @@
         android:text="FS JAVA Batch 2018"
         android:textFontWeight="700"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/imageView4" />
+        app:layout_constraintStart_toEndOf="@+id/displayPictureChatView"
+        app:layout_constraintTop_toTopOf="@+id/displayPictureChatView" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/timeStampChatView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:textSize="11dp"
         android:text="8:28 am"
-        app:layout_constraintBottom_toBottomOf="@+id/textView5"
+        android:textSize="11dp"
+        app:layout_constraintBottom_toBottomOf="@+id/titleChatView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView5" />
+        app:layout_constraintTop_toTopOf="@+id/titleChatView" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/receiptsChatView"
         android:layout_width="18dp"
         android:layout_height="18dp"
         android:layout_marginBottom="2dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintBottom_toBottomOf="@+id/displayPictureChatView"
+        app:layout_constraintStart_toStartOf="@+id/titleChatView"
+        app:layout_constraintTop_toBottomOf="@+id/titleChatView"
         app:srcCompat="@drawable/ic_check_black_24dp" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/meidaIndicator"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="2dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="@+id/imageView5"
+        app:layout_constraintBottom_toBottomOf="@+id/receiptsChatView"
+        app:layout_constraintStart_toEndOf="@+id/receiptsChatView"
+        app:layout_constraintTop_toTopOf="@+id/receiptsChatView"
         app:srcCompat="@drawable/ic_baseline_image_24" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/descriptionChatView"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="2dp"
         android:text="Sticker"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toTopOf="@+id/imageView5" />
+        app:layout_constraintBottom_toBottomOf="@+id/receiptsChatView"
+        app:layout_constraintStart_toEndOf="@+id/meidaIndicator"
+        app:layout_constraintTop_toTopOf="@+id/receiptsChatView" />
 
     <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="18dp"
-        android:layout_height="0dp"
+        android:id="@+id/pinImageViewChatView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"
-        android:scaleX="1.5"
-        android:scaleY="1.5"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-        app:layout_constraintEnd_toStartOf="@+id/imageView7"
-        app:layout_constraintTop_toTopOf="@+id/imageView5"
+        android:contentDescription="@string/menuitem_pin"
+        android:scaleType="fitStart"
+        android:src="@drawable/ic_inline_pin"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/receiptsChatView"
+        app:layout_constraintEnd_toStartOf="@+id/muteIndicator"
+        app:layout_constraintTop_toTopOf="@+id/receiptsChatView"
         app:srcCompat="@drawable/ic_baseline_volume_mute_24" />
 
     <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="18dp"
-        android:layout_height="0dp"
+        android:id="@+id/muteIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:layout_marginEnd="4dp"
-        android:background="@drawable/bg_circle"
-        android:backgroundTint="#677581"
-        android:rotation="45"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-        app:layout_constraintEnd_toStartOf="@+id/textView8"
-        app:layout_constraintTop_toTopOf="@+id/imageView5"
-        app:srcCompat="@drawable/ic_baseline_push_pin_24" />
+        android:background="@drawable/ic_inline_mute"
+        android:contentDescription="@string/menuitem_mute_notifications"
+        android:scaleType="fitStart"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/receiptsChatView"
+        app:layout_constraintEnd_toStartOf="@+id/unseenCountChatView"
+        app:layout_constraintTop_toTopOf="@+id/receiptsChatView"
+        app:tint="@color/msgStatusTint"
+        app:tintMode="src_in" />
+    <!--android:backgroundTint="#677581"-->
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/unseenCountChatView"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:layout_marginEnd="6dp"
-        android:background="@drawable/bg_badage"
+        android:background="@drawable/new_messages_indicator"
         android:gravity="center"
+        android:minWidth="21dp"
+        android:minHeight="21dp"
         android:paddingStart="6dp"
+        android:paddingLeft="3dp"
+        android:paddingTop="0dp"
         android:paddingEnd="6dp"
+        android:paddingRight="3dp"
+        android:paddingBottom="0dp"
         android:text="4"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-        app:layout_constraintEnd_toEndOf="@+id/textView7"
-        app:layout_constraintTop_toTopOf="@+id/imageView5" />
+        android:textColor="@color/conversations_row_unread_count"
+        android:textSize="10.5sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/receiptsChatView"
+        app:layout_constraintEnd_toEndOf="@+id/timeStampChatView"
+        app:layout_constraintTop_toTopOf="@+id/receiptsChatView"
+        tools:ignore="SmallSp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,6 +12,7 @@
         android:id="@+id/message_send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:minWidth="100dp"
         android:layout_marginEnd="18dp"
         android:background="@drawable/bg_msg"
         android:backgroundTint="#054640"
@@ -21,46 +22,47 @@
         tools:ignore="UselessParent">
 
         <TextView
-            android:id="@+id/text"
+            android:id="@+id/msgData"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="6dp"
-            android:layout_marginBottom="6dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:maxWidth="200dp"
-            android:text="Parth Puri"
+            android:paddingEnd="8dp"
+            android:text="System.currentTimeMillis \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
             android:textColor="#FFFFFF"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/msgTime"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/msg_time"
+            android:id="@+id/msgTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginEnd="2dp"
             android:layout_marginBottom="4dp"
-            android:layout_toEndOf="@+id/text"
+            android:layout_toEndOf="@+id/msgData"
             android:text="1:30 P.M."
             android:textColor="#8F8F8F"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/text" />
+            app:layout_constraintEnd_toStartOf="@+id/readReceipt" />
 
         <ImageView
-            android:id="@+id/is_Read_iv"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_alignBottom="@+id/text"
+            android:id="@+id/readReceipt"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignBottom="@+id/msgData"
             android:layout_marginEnd="6dp"
-            android:layout_toEndOf="@+id/msg_time"
+            android:layout_toEndOf="@+id/msgTime"
+            android:scaleType="fitXY"
             android:src="@drawable/ic_check_black_24dp"
-            app:layout_constraintBottom_toBottomOf="@+id/msg_time"
+            app:layout_constraintBottom_toBottomOf="@+id/msgTime"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/msg_time"
-            app:layout_constraintTop_toTopOf="@+id/msg_time"
+            app:layout_constraintTop_toTopOf="@+id/msgTime"
             app:tint="#1392CC" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

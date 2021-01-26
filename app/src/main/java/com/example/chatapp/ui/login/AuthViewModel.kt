@@ -5,8 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.chatapp.R
-import com.example.chatapp.data.LoginRepository
-import com.example.chatapp.data.firebase.FirebaseSource
+import com.example.chatapp.data.repository.LoginRepository
+import com.example.chatapp.data.firebase.FirebaseAuthSource
 import com.example.chatapp.utils.isPasswordValid
 import com.example.chatapp.utils.isUserNameValid
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -28,7 +28,7 @@ class AuthViewModel(private val loginRepository: LoginRepository) : ViewModel() 
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                Log.e("${loginRepository.getUser()?.email} +++ ${FirebaseSource().currentUser()?.email}", "Auth Result success")
+                Log.e("${loginRepository.getUser()?.email} +++ ${FirebaseAuthSource(null).currentUser()?.email}", "Auth Result success")
                 _authResult.value = AuthResult(success = loginRepository.getUser())
             }, {
                 //sending a failure callback

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".ui.login.RegisterPhoneActivity">
+    <!--Todo and menu button if u want for showing help-->
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/title_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/register_phone_toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="start|center_horizontal|clip_horizontal"
+            android:text="@string/register_phone_header"
+            android:textColor="@color/reg_title_color"
+            android:textSize="18sp" />
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/register_phone_number_code_confirm"
+                android:textColor="@color/text_description"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/whats_my_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/whats_my_number"
+                android:textColor="@color/text_link_color"
+                android:textSize="14sp" />
+
+            <!--Todo add country selector del below id-->
+            <LinearLayout
+                android:id="@+id/phone_number_entry"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/registration_country_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@string/country"
+                    android:textColor="@color/settings_item_subtitle_text"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/registration_country"
+                    style="@style/Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:backgroundTintMode="src_in"
+                    android:ellipsize="end"
+                    android:focusableInTouchMode="false"
+                    android:gravity="center"
+                    android:hint="@string/pick_a_country"
+                    android:inputType="none"
+                    android:singleLine="true"
+                    android:textColor="@color/settings_item_title_text"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/registration_country_error_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:focusableInTouchMode="false"
+                    android:gravity="start"
+                    android:singleLine="true"
+                    android:text="@string/register_invalid_cc_cap"
+                    android:textColor="@color/red_error"
+                    android:textSize="11sp"
+                    android:visibility="invisible" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBaseline="@+id/registration_cc"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:paddingStart="4dp"
+                            android:singleLine="true"
+                            android:text="+"
+                            android:textColor="@color/hint_text"
+                            android:textSize="16sp" />
+
+                        <EditText
+                            android:id="@+id/registration_cc"
+                            android:layout_width="@dimen/enter_phone_number_cc_width_modified"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:digits="0123456789"
+                            android:maxLength="3"
+                            android:ellipsize="end"
+                            android:gravity="center"
+                            android:imeOptions="actionDone"
+                            android:inputType="phone"
+                            android:lines="1"
+                            android:maxLines="1"
+                            android:paddingStart="20dp"
+                            android:singleLine="true"
+                            android:textColor="@color/primary_text"
+                            android:textSize="16sp" />
+                    </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/registration_phone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:maxLength="17"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:hint="@string/register_phone_your_number"
+                        android:imeOptions="actionDone"
+                        android:inputType="phone"
+                        android:selectAllOnFocus="true"
+                        android:singleLine="true"
+                        android:textColor="@color/primary_text"
+                        android:textColorHint="@color/hint_text"
+                        android:textSize="16sp" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!--
+
+                        <com.whatsapp.components.PhoneNumberEntry
+                            android:id="@+id/registration_fields"
+                            android:layout_width="260dp"
+                            android:layout_height="45dp"
+                            android:gravity="center_vertical"
+                            app:pneBarColor="@color/accent_light" />
+            -->
+
+            <TextView
+                android:id="@+id/mistyped_undercard_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingBottom="8dp"
+                android:text="@string/register_number_mistyped_suggestion"
+                android:textColorLink="@color/text_link_color"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/sms_charge_warning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="@string/register_phone_number_sms_charge_warning"
+                android:textColor="@color/conversations_text_gray"
+                android:textSize="14sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <!--Todo change color of button-->
+            <Button
+                android:id="@+id/registration_submit"
+                style="@style/CustomButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_vertical|center_horizontal|center"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="14dp"
+                android:background="@color/primary_button_color_selector"
+                android:text="@string/next"
+                android:textColor="@color/primary_button_text_color_selector"
+                app:strokeColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/registration_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom|center_vertical|center_horizontal|center"
+                android:lineSpacingMultiplier="1.25"
+                android:paddingBottom="8dp"
+                android:textColor="#8a000000"
+                android:textSize="12sp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

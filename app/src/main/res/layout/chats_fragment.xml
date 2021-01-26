@@ -6,12 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.fragment.ChatsFragment">
 
-    <include layout="@layout/layout_chat_view"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewChatFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/layout_chat_view"/>
 
-    <Button
-        android:layout_gravity="bottom"
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button" />
 </FrameLayout>

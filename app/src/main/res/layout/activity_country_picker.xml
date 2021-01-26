@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".ui.login.CountryPickerActivity">
+
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/title_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:title="@string/pick_a_country"
+        app:navigationIcon="@drawable/ic_back_teal"
+        app:menu="@menu/document_picker"
+        />
+
+    <FrameLayout
+        android:id="@+id/search_holder"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:visibility="gone" />
+
+    <View style="@style/Divider" />
+
+    <ListView
+        android:id="@+id/country_list"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:cacheColorHint="@android:color/transparent"
+        android:choiceMode="singleChoice"
+        android:divider="@drawable/divider_gray"
+        android:dividerHeight="0.5dp"
+        android:paddingStart="0dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/countryPickerRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@drawable/divider_gray"
+        android:dividerHeight="0.5dp"
+        android:paddingStart="0dp"
+        tools:listitem="@layout/country_picker_row"
+        tools:itemCount="243"/>
+
+</LinearLayout>
